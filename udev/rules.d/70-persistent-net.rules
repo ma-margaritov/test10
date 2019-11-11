@@ -1,0 +1,1 @@
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="hv_netvsc", ATTR{address}=="00:0d:3a:a8:56:0d", NAME="eth0"

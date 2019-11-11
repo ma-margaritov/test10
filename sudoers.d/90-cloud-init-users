@@ -1,0 +1,4 @@
+# Created by cloud-init v. 19.2-36-g059d049c-0ubuntu2~16.04.1 on Tue, 05 Nov 2019 19:21:07 +0000
+
+# User rules for _misha
+_misha ALL=(ALL) NOPASSWD:ALL
