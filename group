@@ -54,3 +54,4 @@ mlocate:x:114:
 admin:x:115:
 unscd:x:116:
 _misha:x:1000:
+docker:x:117:

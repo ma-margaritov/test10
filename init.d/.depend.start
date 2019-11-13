@@ -1,6 +1,7 @@
-TARGETS = rsyslog lvm2-lvmetad open-vm-tools uuidd unattended-upgrades lxd lxcfs unscd lvm2-lvmpolld killprocs apport mdadm atd irqbalance single ssh rsync dbus cron acpid plymouth rc.local grub-common ondemand
+TARGETS = rsyslog lvm2-lvmetad open-vm-tools uuidd unattended-upgrades lxd unscd lvm2-lvmpolld killprocs apport ubuntu-fan mdadm cgroupfs-mount atd irqbalance single ssh rsync dbus cron acpid docker lxcfs plymouth grub-common rc.local ondemand
 INTERACTIVE =
 mdadm: rsyslog
+cgroupfs-mount: rsyslog
 atd: rsyslog
 irqbalance: rsyslog
 single: killprocs
@@ -9,7 +10,9 @@ rsync: rsyslog
 dbus: rsyslog
 cron: rsyslog
 acpid: rsyslog
-plymouth: mdadm rsyslog lvm2-lvmetad open-vm-tools uuidd unattended-upgrades lxd atd lxcfs unscd irqbalance lvm2-lvmpolld apport ssh rsync dbus cron acpid
-rc.local: mdadm rsyslog lvm2-lvmetad open-vm-tools uuidd unattended-upgrades lxd atd lxcfs unscd irqbalance lvm2-lvmpolld apport ssh rsync dbus cron acpid
-grub-common: mdadm rsyslog lvm2-lvmetad open-vm-tools uuidd unattended-upgrades lxd atd lxcfs unscd irqbalance lvm2-lvmpolld apport ssh rsync dbus cron acpid
-ondemand: mdadm rsyslog lvm2-lvmetad open-vm-tools uuidd unattended-upgrades lxd atd lxcfs unscd irqbalance lvm2-lvmpolld apport ssh rsync dbus cron acpid
+docker: rsyslog cgroupfs-mount
+lxcfs: cgroupfs-mount
+plymouth: mdadm rsyslog lvm2-lvmetad open-vm-tools uuidd unattended-upgrades docker cgroupfs-mount lxd atd lxcfs unscd irqbalance lvm2-lvmpolld apport ssh rsync dbus cron acpid ubuntu-fan
+grub-common: mdadm rsyslog lvm2-lvmetad open-vm-tools uuidd unattended-upgrades docker cgroupfs-mount lxd atd lxcfs unscd irqbalance lvm2-lvmpolld apport ssh rsync dbus cron acpid ubuntu-fan
+rc.local: mdadm rsyslog lvm2-lvmetad open-vm-tools uuidd unattended-upgrades docker cgroupfs-mount lxd atd lxcfs unscd irqbalance lvm2-lvmpolld apport ssh rsync dbus cron acpid ubuntu-fan
+ondemand: mdadm rsyslog lvm2-lvmetad open-vm-tools uuidd unattended-upgrades docker cgroupfs-mount lxd atd lxcfs unscd irqbalance lvm2-lvmpolld apport ssh rsync dbus cron acpid ubuntu-fan
